@@ -24,6 +24,8 @@ private slots:
     void incrementar_timer1();
 
 
+    void on_marcha_btt_clicked();
+
 private:
     Ui::SecWindow *ui;
 };

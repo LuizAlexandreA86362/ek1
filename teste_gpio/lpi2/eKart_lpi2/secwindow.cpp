@@ -16,8 +16,8 @@ SecWindow::SecWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     serial = new QSerialPort(this);
-    serial->setPortName("ttyS0"); //verificar qual é o nome do port q estou a utilizar
-    serial->setBaudRate(QSerialPort::Baud57600);
+    serial->setPortName("ttyS0");
+    serial->setBaudRate(QSerialPort::Baud115200);
     serial->setDataBits(QSerialPort::Data8);
     serial->setParity(QSerialPort::NoParity);
     serial->setStopBits(QSerialPort::OneStop);
@@ -30,11 +30,14 @@ SecWindow::SecWindow(QWidget *parent) :
 
     connect(timer1,SIGNAL(timeout()),this,SLOT(incrementar_timer1())); //timer da buzina
 
-    if(wiringPiSetup()==-1) exit(1);
+ /*   APARTIR DAQUI QUE DÁ ERRO
+  *
+  * NÃO CONHECE AS FUNÇÕES pinMode e wiringPiSetup
+  //  if(wiringPiSetup()==-1) exit(1);
 
     pinMode(5,INPUT);//PISCA DA ESQUERDA
     pinMode(6,INPUT);//PISCA DA DIREITA
-    pinMode(16,OUTPUT);//buzina
+    pinMode(16,OUTPUT);//buzina*/
 }
 
 SecWindow::~SecWindow()
@@ -56,7 +59,7 @@ void SecWindow::on_pushButton_clicked() //para a buzina
     if(timer1->isActive())
     {
         timer1->stop();
-        digitalWrite(16,0);
+        //digitalWrite(16,0);
         ui->pushButton->setText("Ligar Buzina");
 
     }
@@ -69,14 +72,25 @@ void SecWindow::on_pushButton_clicked() //para a buzina
 
 void SecWindow::incrementar_timer1()
 {
-    digitalWrite(16,1);
+ //   digitalWrite(16,1); ---------------------------------TAMBÉM NÃO CONHECE ESTA FUNÇÃO
 
 }
 
-void SecWindow::on_Received_Data()
+void SecWindow::on_Received_Data() //RX
 {
     QByteArray ba;
     ba=serial->readAll();
     ui->label_2->setText((ui->label_2->text()+ba));
     qDebug() << ba;
+
+}
+
+void SecWindow::on_marcha_btt_clicked() //TX
+{
+    if(serial->isOpen()==true)
+    {
+        serial->write("MA\n"); //o comando utilizado para efetuar a marcha atrás
+        qDebug()<<"Message Send";
+        ui->label_2->setText(" ");
+    }
 }

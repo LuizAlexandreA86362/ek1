@@ -35,7 +35,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = eKart_lpi21.0.0
-DISTDIR = /home/pi/Documents/n1/eKart_Lpi/lpi2/build-eKart_lpi2-Desktop-Debug/.tmp/eKart_lpi21.0.0
+DISTDIR = /home/pi/Documents/lpi/ek1/teste_gpio/lpi2/build-eKart_lpi2-Desktop-Debug/.tmp/eKart_lpi21.0.0
 LINK          = g++
 LFLAGS        = 
 LIBS          = $(SUBLIBS) -L/usr/lib/arm-linux-gnueabihf -lQt5Widgets -lQt5Gui -lQt5SerialPort -lQt5Core -lGLESv2 -lpthread -latomic 
@@ -369,12 +369,12 @@ moc_mainwindow.cpp: ../eKart_lpi2/secwindow.h \
 		../eKart_lpi2/mainwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Documents/n1/eKart_Lpi/lpi2/build-eKart_lpi2-Desktop-Debug/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Documents/n1/eKart_Lpi/lpi2/eKart_lpi2 -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtSerialPort -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/local/include -I/usr/lib/llvm-10/lib/clang/10.0.0/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../eKart_lpi2/mainwindow.h -o moc_mainwindow.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Documents/lpi/ek1/teste_gpio/lpi2/build-eKart_lpi2-Desktop-Debug/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Documents/lpi/ek1/teste_gpio/lpi2/eKart_lpi2 -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtSerialPort -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/local/include -I/usr/lib/llvm-10/lib/clang/10.0.0/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../eKart_lpi2/mainwindow.h -o moc_mainwindow.cpp
 
 moc_secwindow.cpp: ../eKart_lpi2/secwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Documents/n1/eKart_Lpi/lpi2/build-eKart_lpi2-Desktop-Debug/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Documents/n1/eKart_Lpi/lpi2/eKart_lpi2 -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtSerialPort -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/local/include -I/usr/lib/llvm-10/lib/clang/10.0.0/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../eKart_lpi2/secwindow.h -o moc_secwindow.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/pi/Documents/lpi/ek1/teste_gpio/lpi2/build-eKart_lpi2-Desktop-Debug/moc_predefs.h -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++ -I/home/pi/Documents/lpi/ek1/teste_gpio/lpi2/eKart_lpi2 -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtSerialPort -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/local/include -I/usr/lib/llvm-10/lib/clang/10.0.0/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../eKart_lpi2/secwindow.h -o moc_secwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
